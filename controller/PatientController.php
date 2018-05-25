@@ -24,11 +24,25 @@ function create()
 function createSave()
 {
 	createPatient();
-	header("Location: /kalender/patient/index");
+	header("Location: /hospital-php/patient/index");
 }
 
 function delete($id) 
 {
 	deletePatient($id);
-	header("Location: /kalender/patient/index");
+	header("Location: /hospital-php/patient/index");
+}
+
+function edit($id) 
+{
+	render("patients/edit", array(
+		'getUsers' => getPatientId($id),
+		'species' => getAllSpecies($id),
+		'clients' => getAllClients($id)
+	));
+}
+function editSave($id) 
+{
+	editPatient($id);
+	header("Location: /hospital-php/patient/index");
 }

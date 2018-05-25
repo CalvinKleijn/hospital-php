@@ -17,11 +17,23 @@ function create()
 function createSave()
 {
 	createClient();
-	header("Location: /kalender/client/index");
+	header("Location: /hospital-php/client/index");
 }
 
 function delete($id) 
 {
 	deleteClient($id);
-	header("Location: /kalender/client/index");
+	header("Location: /hospital-php/client/index");
+}
+
+function edit($id) 
+{
+	render("clients/edit", array(
+		'getUsers' => getClientId($id)));
+}
+
+function editSave($id) 
+{
+	editClient($id);
+	header("Location: /hospital-php/client/index");
 }

@@ -58,3 +58,19 @@ function createSpecie()
 
 	return $query->fetchAll();
  }
+
+function editSpecie($id) 
+{
+	$beschrijving = $_POST["beschrijving"];
+
+	$db = openDatabaseConnection();
+
+	$sql = "UPDATE species SET species_description = :beschrijving WHERE species_id = :id";
+
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		':beschrijving' => $beschrijving,
+		':id' => $id));
+
+	$db = null;
+}

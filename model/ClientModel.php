@@ -60,3 +60,21 @@ function createClient()
 
 	return $query->fetchAll();
  }
+
+function editClient($id) 
+{
+	$voornaam = $_POST["voornaam"];
+	$achternaam = $_POST["achternaam"];
+
+	$db = openDatabaseConnection();
+
+	$sql = "UPDATE clients SET client_firstname = :voornaam, client_lastname = :achternaam WHERE client_id = :id";
+
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		':voornaam' => $voornaam,
+		':achternaam' => $achternaam,
+		':id' => $id));
+
+	$db = null;
+}

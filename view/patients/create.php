@@ -1,7 +1,7 @@
 <form action="<?= URL ?>patient/createSave" method="POST">
-		<h3>Naam</h3>
+		<h1>Naam</h1>
 		<input type="text" name="naam">
-		<h3>Specie</h3>
+		<h1>Specie</h1>
 		<select type="text" name="specie" required>
             <?php
                 foreach($species as $specie)
@@ -10,9 +10,9 @@
                 }
             ?>
         </select>
-		<h3>Status</h3>
+		<h1>Status</h1>
 		<input type="text" name="status">
-		<h3>Client</h3>
+		<h1>Client</h1>
 		<select type="text" name="client" required>
             <?php
                 foreach($clients as $client)
@@ -21,6 +21,9 @@
                 }
             ?>
         </select>
+        <h1>Gender:</h1>
+        <input type="radio" name="gender" value="male">Man
+        <input type="radio" name="gender" value="female">Vrouw<br><br>
         <br><br>
 		<input type="submit">
-	</form>
+</form>
