@@ -41,8 +41,11 @@ function edit($id)
 		'clients' => getAllClients($id)
 	));
 }
+
 function editSave($id) 
 {
 	editPatient($id);
 	header("Location: /hospital-php/patient/index");
 }
+
+

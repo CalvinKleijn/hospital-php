@@ -12,6 +12,8 @@
         </select>
 		<h1>Status</h1>
 		<input type="text" name="status">
+        <h1>Gender:</h1>
+        <input type="text" name="patient_sex">
 		<h1>Client</h1>
 		<select type="text" name="client" required>
             <?php
@@ -21,9 +23,6 @@
                 }
             ?>
         </select>
-        <h1>Gender:</h1>
-        <input type="radio" name="gender" value="male">Man
-        <input type="radio" name="gender" value="female">Vrouw<br><br>
         <br><br>
 		<input type="submit">
 </form>
