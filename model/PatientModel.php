@@ -21,19 +21,19 @@ function createPatient()
 	$naam = $_POST["naam"];
 	$specie = $_POST["specie"];
 	$status = $_POST["status"];
-	$sex = $_POST['patient_sex'];
+	$patient_sex = $_POST['patient_sex'];
 	$client = $_POST["client"];
 
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO patients (patient_name, species_id, patient_status, patient_sex, client_id) VALUES (:naam, :specie, :status, :sex, :client)";
+	$sql = "INSERT INTO patients (patient_name, species_id, patient_status, patient_sex, client_id) VALUES (:naam, :specie, :status, :patient_sex, :client)";
 
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':naam' => $naam,
 		':specie' => $specie,
 		':status' => $status,
-		':sex' => $sex,
+		':patient_sex' => $patient_sex,
 		':client' => $client));
 
 	$db = null;
@@ -74,19 +74,19 @@ function editPatient($id)
 	$naam = $_POST["naam"];
 	$specie = $_POST["specie"];
 	$status = $_POST["status"];
-	$sex = $_POST['patient_sex'];
+	$patient_sex = $_POST['patient_sex'];
 	$client = $_POST["client"];
 
 	$db = openDatabaseConnection();
 
-	$sql = "UPDATE patients SET patient_name = :naam, species_id = :specie, patient_status = :status, patient_sex = :sex, client_id = :client WHERE patient_id = :id";
+	$sql = "UPDATE patients SET patient_name = :naam, species_id = :specie, patient_status = :status, patient_sex = :patient_sex, client_id = :client WHERE patient_id = :id";
 
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':naam' => $naam,
 		':specie' => $specie,
 		':status' => $status,
-		':sex' => $sex,
+		':patient_sex' => $patient_sex,
 		':client' => $client,
 		':id' => $id));
 

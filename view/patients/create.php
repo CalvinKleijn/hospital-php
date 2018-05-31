@@ -12,8 +12,9 @@
         </select>
 		<h1>Status</h1>
 		<input type="text" name="status">
-        <h1>Gender:</h1>
-        <input type="text" name="patient_sex">
+        <h1>Gender</h1>
+        <input autocomplete="off" type="radio" name="patient_sex" value="Man"><?php if ($patient['patient_sex'] == 'Man'){ echo 'checked'; } ?>>Man
+        <input type="radio" name="patient_sex" value="Vrouw"><?php if ($patient['patient_sex'] == 'Vrouw'){ echo 'checked'; } ?>>Vrouw<br>
 		<h1>Client</h1>
 		<select type="text" name="client" required>
             <?php

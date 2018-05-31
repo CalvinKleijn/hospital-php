@@ -21,8 +21,9 @@
         </select>
 		<h1>Status</h1>
 		<input type="text" name="status" value="<?php echo $getUser['patient_status'] ?>">
-        <h1>Gender:</h1>
-        <input type="text" name="patient_sex" value="<?php echo $getUser['patient_sex'] ?>">
+        <h1>Gender</h1>
+        <input type="radio" name="patient_sex" value="Man" <?php if ($getUser['patient_sex'] == 'Man'){ echo 'checked'; } ?>> Man
+        <input type="radio" name="patient_sex" value="Vrouw" <?php if ($getUser['patient_sex'] == 'Vrouw'){ echo 'checked'; } ?>>Vrouw<br>
 		<h1>Client</h1>
 		<select type="text" name="client" required>
             <?php
