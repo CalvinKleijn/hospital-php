@@ -13,8 +13,8 @@
 		<h1>Status</h1>
 		<input type="text" name="status">
         <h1>Gender</h1>
-        <input autocomplete="off" type="radio" name="patient_sex" value="Man"><?php if ($patient['patient_sex'] == 'Man'){ echo 'checked'; } ?>>Man
-        <input type="radio" name="patient_sex" value="Vrouw"><?php if ($patient['patient_sex'] == 'Vrouw'){ echo 'checked'; } ?>>Vrouw<br>
+        <input autocomplete="off" type="radio" name="patient_sex" value="Male"><?php if ($patient['patient_sex'] == 'Male'){ echo 'checked'; } ?>>Male
+        <input type="radio" name="patient_sex" value="Female"><?php if ($patient['patient_sex'] == 'Female'){ echo 'checked'; } ?>>Female<br>
 		<h1>Client</h1>
 		<select type="text" name="client" required>
             <?php
